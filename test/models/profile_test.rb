@@ -1,7 +1,18 @@
 require 'test_helper'
 
 class ProfileTest < ActiveSupport::TestCase
-  test "profile exists" do
-    Profile.new
+  private def response
+    JSON.parse(File.read('./test/fixtures/mock_profile.json'))
   end
+  
+  test "profile exists" do
+    assert Profile
+  end
+
+  test "profile has owner and array of repositories" do
+    p = Profile.new(response)
+    assert p.owner
+    assert p.repositories
+  end
+
 end

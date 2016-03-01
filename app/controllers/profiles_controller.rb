@@ -3,5 +3,6 @@ class ProfilesController < ApplicationController
   end
 
   def display
+    
   end
 end
