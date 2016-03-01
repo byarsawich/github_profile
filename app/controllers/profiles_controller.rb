@@ -3,6 +3,6 @@ class ProfilesController < ApplicationController
   end
 
   def display
-    
+    profile = Profile.new(params[:username])
   end
 end
