@@ -39,4 +39,8 @@ class Repository
       @urls[key] = value if key.match(/\w*url\b/i)
     end
   end
+
+  def get_url(url_type)
+    urls[url_type]
+  end
 end
